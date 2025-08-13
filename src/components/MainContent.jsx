@@ -1,5 +1,4 @@
 import { useState } from 'react';
-
 import HelpArea from './HelpArea';
 
 function MainContent() {
@@ -10,8 +9,11 @@ function MainContent() {
   }
 
   return (
-    <main>
-      <button onClick={toggleHelp}>{helpVisible ? 'Hide' : 'Show'} Help</button>
+    <main data-testid="main-content">
+      <h1>Welcome to our Test Project</h1>
+      <button onClick={toggleHelp} aria-label="toggle help">
+        {helpVisible ? 'Hide' : 'Show'} Help
+      </button>
       {helpVisible && <HelpArea />}
     </main>
   );
